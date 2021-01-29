@@ -10,7 +10,10 @@ def ddigenerator(xml):
     title = content['title'][0].replace(' ', '_')
     titleuri = URIRef(content['identifier'][0])
     name = content['identifier'][0].split(':')[-1]
-    language = content['language'][0]
+    try:
+        language = content['language'][0]
+    except:
+        language = 'nl'
     ###
     g = Graph()
     #The following terms are namespaces for DDI Discovery
