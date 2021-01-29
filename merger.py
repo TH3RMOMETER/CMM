@@ -9,6 +9,8 @@ def translator(xml):
     for key, value in stdict.items():
         if 'lang' in key:
             language = value[0]
+        else:
+            language = 'nl'
     for key, value in stdict.items():
         stdict_translated.setdefault(key, [])
         if not 'identifier' in key and not 'description' in key:
